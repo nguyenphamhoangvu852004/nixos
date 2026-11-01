@@ -181,6 +181,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    codex
     git
     github-cli
     vlc
@@ -213,6 +214,9 @@
     gradle
     lua52Packages.tree-sitter-cli
     lua55Packages.fzf-lua
+    fastfetch
+    htop
+    btop
 
     (pkgs.symlinkJoin {
       name = "obs-studio-with-nvidia";
