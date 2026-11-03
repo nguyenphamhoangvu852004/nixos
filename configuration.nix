@@ -75,6 +75,11 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # Enable the GNOME Desktop Environemtn
+  # services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
+
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -119,6 +124,15 @@
   # Install firefox.
   programs.firefox.enable = true;
   programs.nix-ld.enable = true;
+
+  # hyprland
+  programs.hyprland =
+    {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+
   # programs.obs-studio = {
   #   enable = true;
   #
@@ -181,7 +195,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    codex
+    hyprlauncher
+    wpsoffice-cn
+    mindustry
+    steam
+    postman
     git
     github-cli
     vlc
@@ -217,7 +235,7 @@
     fastfetch
     htop
     btop
-
+    fzf
     (pkgs.symlinkJoin {
       name = "obs-studio-with-nvidia";
 
@@ -229,7 +247,12 @@
           --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib
       '';
     })
+
   ];
+
+  services.cloudflare-warp.enable = true;
+
+  services.flatpak.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
