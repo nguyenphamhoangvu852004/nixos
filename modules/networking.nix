@@ -1,13 +1,17 @@
-
 { config, pkgs, ... }:
 {
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.firewall.interfaces."br-monitoring" = {
+    allowedTCPPorts = [
+      8081
+    ];
+  };
 
   networking.firewall.interfaces."docker0" = {
     allowedTCPPorts = [
+
       8080
-      8081
       8082
       8083
       8084

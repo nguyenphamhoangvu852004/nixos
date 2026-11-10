@@ -16,10 +16,9 @@
     ./modules/boot.nix
     ./modules/bluetooth.nix
     ./modules/audio.nix
-
+    ./modules/overlays.nix
     ./users/nguyenvu.nix
   ];
-
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -36,6 +35,10 @@
 
   services.flatpak.enable = true;
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -78,17 +81,5 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
-  nixpkgs.overlays = [
-    (final: prev: {
-      ibus-engines = prev.ibus-engines // {
-        bamboo = prev.ibus-engines.bamboo.overrideAttrs (old: {
-          postInstall = (old.postInstall or "") + ''
-            mkdir -p $out/lib/ibus-bamboo
-            ln -s $out/share/ibus-bamboo/data $out/lib/ibus-bamboo/data
-          '';
-        });
-      };
-    })
-  ];
-
+  
 }

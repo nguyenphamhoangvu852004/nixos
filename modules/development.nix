@@ -1,13 +1,4 @@
-
-{config,pkgs,...}:
-let
-  unstable =
-    import (builtins.fetchTarball "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz")
-      {
-        inherit (pkgs.stdenv.hostPlatform) system;
-        config.allowUnfree = true;
-      };
-in
+{ config, pkgs, ... }:
 {
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -16,7 +7,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    unstable.chatgpt
     discord
     telegram-desktop
     vegeta
@@ -71,4 +61,4 @@ in
     })
 
   ];
-  }
+}
