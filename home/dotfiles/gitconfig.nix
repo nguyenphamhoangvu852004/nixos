@@ -10,21 +10,12 @@
         email = "nguyenphamhoangvu852004@gmail.com";
       };
 
-      credential = {
-        "https://github.com" = {
-          helper = [
-            ""
-            "!gh auth git-credential"
-          ];
-        };
+      init.defaultBranch = "main";
 
-        "https://gist.github.com" = {
-          helper = [
-            ""
-            "!gh auth git-credential"
-          ];
-        };
-      };
+      credential.helper = [
+        ""
+        "!gh auth git-credential"
+      ];
     };
   };
 }
