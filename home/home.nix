@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./dotfiles/gitconfig.nix
+
+  ];
+
   home.username = "nguyenvu";
   home.homeDirectory = "/home/nguyenvu";
 
@@ -13,6 +18,6 @@
   };
 
   # home.file = {
-  #   ".gitconfig".source = ./dotfiles/git/config;
+  #   ".gitconfig".source = ./dotfiles/gitconfig;
   # };
 }
