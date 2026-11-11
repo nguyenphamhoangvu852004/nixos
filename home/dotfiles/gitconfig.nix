@@ -1,11 +1,30 @@
-{ ... }: {
+{ ... }:
+
+{
   programs.git = {
     enable = true;
-    userName = "nguyenphamhoangvu852004";
-    userEmail = "nguyenphamhoangvu852004@gmail.com";
 
-    extraConfig = {
-      init.defaultBranch = "main";
+    settings = {
+      user = {
+        name = "nguyenphamhoangvu852004";
+        email = "nguyenphamhoangvu852004@gmail.com";
+      };
+
+      credential = {
+        "https://github.com" = {
+          helper = [
+            ""
+            "!gh auth git-credential"
+          ];
+        };
+
+        "https://gist.github.com" = {
+          helper = [
+            ""
+            "!gh auth git-credential"
+          ];
+        };
+      };
     };
   };
 }
