@@ -1,0 +1,171 @@
+{
+    "logo": {
+        "type": "file",
+        "source": "~/.config/fastfetch/logo.txt",
+        "position": "top",
+        "color": {
+            "1": "white"
+        }
+    },
+    "display": {
+        "separator": "  ",
+        "key": {
+            "width": 5
+        },
+        "percent": {
+            "type": 9
+        },
+        "size": {
+            "binaryPrefix": "iec",
+            "ndigits": 1
+        }
+    },
+    "modules": [
+    {
+        "type": "custom",
+        "format": "\u001b[38;5;8m┌────────────────────────────────────────  \u001b[38;5;7mSYSTEM  \u001b[38;5;8m────────────────────────────────────────┐"
+    },
+    {
+        "type": "os",
+        "key": "  \u001b[38;5;5m  OS",
+        "format": "{pretty-name} {arch}"
+    },
+    {
+        "type": "kernel",
+        "key": "  \u001b[38;5;5m  Kernel",
+        "format": "{sysname} {release}"
+    },
+    {
+        "type": "de",
+        "key": "  \u001b[38;5;5m  Desktop",
+        "format": "{pretty-name} {version}"
+    },
+    {
+        "type": "wm",
+        "key": "  \u001b[38;5;5m  WM",
+        "format": "{pretty-name} ({protocol-name})"
+    },
+    {
+        "type": "terminal",
+        "key": "  \u001b[38;5;5m  Terminal",
+        "format": "{pretty-name} {version}"
+    },
+    {
+        "type": "terminalfont",
+        "key": "  \u001b[38;5;5m󰛖  Font",
+        "format": "{name}"
+    },
+    {
+        "type": "shell",
+        "key": "  \u001b[38;5;5m  Shell",
+        "format": "{pretty-name} {version}"
+    },
+    {
+        "type": "packages",
+        "key": "  \u001b[38;5;5m  Packages",
+        "format": "{all} (all), {pacman} (pacman), {flatpak-all} (flatpak), {appimage} (appimage)"
+    },
+    {
+        "type": "locale",
+        "key": "  \u001b[38;5;5m  Locale",
+        "format": "{result}"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[38;5;8m┌───────────────────────────────────────  \u001b[38;5;7mHARDWARE  \u001b[38;5;8m───────────────────────────────────────┐"
+    },
+    {
+        "type": "host",
+        "key": "  \u001b[38;5;6m  Host",
+        "format": "{name}"
+    },
+    {
+        "type": "command",
+        "key": "  \u001b[38;5;6m  CPU",
+        "text": "N=$(grep -m1 \"model name\" /proc/cpuinfo | cut -d: -f2 | sed -E \"s/\\(R\\)|\\(TM\\)|[0-9]+th Gen |CPU|@.*//g; s/^ +| +$//g; s/  +/ /g\"); F=$(lscpu | awk -F: \"/max MHz/{printf \\\"%.2f\\\", \\$2/1000; exit}\"); echo \"$N @ ${F} GHz\""
+    },
+    {
+        "type": "gpu",
+        "key": "  \u001b[38;5;6m󰢮  GPU",
+        "format": "{name} ({type}, {driver})"
+    },
+    {
+        "type": "display",
+        "key": "  \u001b[38;5;6m󰍹  Resolution",
+        "format": "{width}x{height} @ {refresh-rate}Hz"
+    },
+    {
+        "type": "memory",
+        "key": "  \u001b[38;5;6m  Memory",
+        "format": "{used} / {total} ({percentage})"
+    },
+    {
+        "type": "swap",
+        "key": "  \u001b[38;5;6m  Swap",
+        "format": "{used} / {total} ({percentage}) - zram"
+    },
+    {
+        "type": "disk",
+        "key": "  \u001b[38;5;6m  Disk",
+        "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem}  [{mountpoint}]",
+        "folders": "/:/mnt/Data"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[38;5;8m┌────────────────────────────────────────  \u001b[38;5;7mSTATUS  \u001b[38;5;8m────────────────────────────────────────┐"
+    },
+    {
+        "type": "localip",
+        "key": "  \u001b[38;5;4m  Local IP",
+        "format": "{ipv4} ({ifname})",
+        "showIpv6": false,
+        "showPrefixLen": false
+    },
+    {
+        "type": "datetime",
+        "key": "  \u001b[38;5;4m  Date",
+        "format": "{day-in-month}.{month-pretty}.{year}  {hour-pretty}:{minute-pretty}:{second-pretty}"
+    },
+    {
+        "type": "processes",
+        "key": "  \u001b[38;5;4m  Processes",
+        "format": "{result} running"
+    },
+    {
+        "type": "command",
+        "key": "  \u001b[38;5;4m  Installed",
+        "text": "LC_ALL=C date -d \"@$(stat -c %W /)\" \"+%d.%m.%Y %H:%M\" 2>/dev/null || echo N/A"
+    },
+    {
+        "type": "command",
+        "key": "  \u001b[38;5;4m  OS Age",
+        "text": "echo \"$(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days since install\""
+    },
+    {
+        "type": "uptime",
+        "key": "  \u001b[38;5;4m  Uptime",
+        "format": "{days}d {hours}h {minutes}m"
+    },
+    {
+        "type": "battery",
+        "key": "  \u001b[38;5;4m  Battery",
+        "format": "{capacity} - {status}"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘"
+    },
+    {
+        "type": "custom",
+        "format": "                                                                    \u001b[38;5;1m  \u001b[38;5;2m  \u001b[38;5;3m  \u001b[38;5;4m  \u001b[38;5;5m  \u001b[38;5;6m  \u001b[38;5;7m  \u001b[38;5;8m "
+    }
+  ]
+}

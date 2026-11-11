@@ -8,6 +8,8 @@
 
   xdg.configFile = {
     "nvim".source = ./dotfiles/nvim;
+    "fastfetch".source = ./dotfiles/fastfetch;
+    "htop".source = ./dotfiles/htop;
   };
 
   # home.file = {
