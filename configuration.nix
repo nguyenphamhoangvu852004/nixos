@@ -39,6 +39,13 @@
     "nix-command"
     "flakes"
   ];
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
+    users.nguyenvu = import ./home/home.nix;
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -81,5 +88,5 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
-  
+
 }
