@@ -14,6 +14,8 @@
     with pkgs;
     with pkgs-unstable;
     [
+      corefonts
+      vista-fonts
       home-manager
       gnome-shell-extensions
       discord

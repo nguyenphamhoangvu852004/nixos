@@ -17,6 +17,7 @@
     ./modules/bluetooth.nix
     ./modules/audio.nix
     ./modules/overlays.nix
+    ./modules/steam.nix
     ./users/nguyenvu.nix
   ];
 
