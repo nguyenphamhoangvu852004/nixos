@@ -17,7 +17,7 @@
     "htop".source = ./dotfiles/htop;
   };
 
-  # home.file = {
-  #   ".gitconfig".source = ./dotfiles/gitconfig;
-  # };
+  home.file = {
+    ".ideavimrc".source = ../../../nixos/home/dotfiles/ideavimrc;
+  };
 }
