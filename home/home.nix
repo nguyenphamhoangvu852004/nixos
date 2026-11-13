@@ -18,6 +18,6 @@
   };
 
   home.file = {
-    ".ideavimrc".source = ../../../nixos/home/dotfiles/ideavimrc;
+    ".ideavimrc".source = ./dotfiles/ideavimrc;
   };
 }
