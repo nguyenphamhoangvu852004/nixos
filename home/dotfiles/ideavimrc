@@ -4,6 +4,7 @@
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 
+let mapleader=" "
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
@@ -32,6 +33,8 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
+Plug 'preservim/nerdtree'
+
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
@@ -49,4 +52,4 @@ set idearefactormode=keep
 let g:NERDTreeMapActivateNode='l'
 let g:NERTTreeMapJumpParent='h'
 
-let mapleader=" "
+nnoremap <leader>e :NERDTreeToggle<CR>
