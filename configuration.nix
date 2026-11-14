@@ -19,12 +19,15 @@
     ./modules/overlays.nix
     ./modules/steam.nix
     ./users/nguyenvu.nix
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
   programs.nix-ld.enable = true;
+
+  programs.zalo.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -47,6 +50,8 @@
     users.nguyenvu = import ./home/home.nix;
   };
 
+  xdg.icons.enable = true;
+  services.dbus.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

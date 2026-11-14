@@ -70,6 +70,8 @@
             --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib
         '';
       })
-
+      (pkgs.discord.override {
+        commandLineArgs = "--ozone-platform=x11";
+      })
     ];
 }

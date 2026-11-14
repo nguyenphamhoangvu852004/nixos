@@ -57,7 +57,28 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "zalo-for-linux": "zalo-for-linux"
+      }
+    },
+    "zalo-for-linux": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794583424,
+        "narHash": "sha256-kJjN6YO233IoWXfI/pJPpV6kucYTNjuqWvAcBwUxjfs=",
+        "owner": "VN-Linux-Family",
+        "repo": "zalo-for-linux",
+        "rev": "bbb6f99e4fe5ead55895825ebc5387181ebf21c5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "VN-Linux-Family",
+        "repo": "zalo-for-linux",
+        "type": "github"
       }
     }
   },
