@@ -1,5 +1,4 @@
-
-{config,pkgs,...}:{
+{ config, pkgs, ... }: {
 
   # Select internationalisation properties.
   i18n.extraLocaleSettings = {
@@ -29,6 +28,18 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # # Enable the XFCE Desktop Envirtonment
+  # services.xserver = {
+  #   enable = true;
+  #   desktopManager.xfce = {
+  #     enable = true;
+  #     enableWaylandSession = false;
+  #   };
+  #
+  # };
+  #
+  # services.displayManager.defaultSession = "xfce";
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -45,4 +56,4 @@
     memoryPercent = 50;
     priority = 100;
   };
-  }
+}

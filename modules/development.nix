@@ -14,6 +14,8 @@
     with pkgs;
     with pkgs-unstable;
     [
+      adwaita-icon-theme
+      gnome-tweaks
       corefonts
       vista-fonts
       home-manager

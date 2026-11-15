@@ -11,6 +11,14 @@
 
   home.stateVersion = "26.05";
 
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   xdg.configFile = {
     "nvim".source = ./dotfiles/nvim;
     "fastfetch".source = ./dotfiles/fastfetch;
