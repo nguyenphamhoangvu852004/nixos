@@ -14,6 +14,7 @@
     with pkgs;
     with pkgs-unstable;
     [
+      chatgpt
       adwaita-icon-theme
       gnome-tweaks
       corefonts

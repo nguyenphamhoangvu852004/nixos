@@ -18,6 +18,7 @@
     ./modules/audio.nix
     ./modules/overlays.nix
     ./modules/steam.nix
+    ./modules/zsh.nix
     ./users/nguyenvu.nix
 
   ];

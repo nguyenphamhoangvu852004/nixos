@@ -3,7 +3,8 @@
 {
   imports = [
     ./dotfiles/gitconfig.nix
-
+    ./dotfiles/alacritty.nix
+    ./dotfiles/ohmyposh.nix
   ];
 
   home.username = "nguyenvu";
@@ -27,5 +28,17 @@
 
   home.file = {
     ".ideavimrc".source = ./dotfiles/ideavimrc;
+  };
+
+  # Fuzzy finder
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # Smarter cd
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
