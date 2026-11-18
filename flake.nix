@@ -36,7 +36,7 @@
         modules = [
           home-manager.nixosModules.home-manager
           zalo-for-linux.nixosModules.default
-          ./configuration.nix
+          ./hosts/nixos/default.nix
         ];
       };
     };

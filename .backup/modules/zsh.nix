@@ -1,6 +1,9 @@
 { ... }: {
   programs.zsh = {
     enable = true;
+    interactiveShellInit = ''
+      export PATH="$HOME/.local/bin:$PATH"
+    '';
     enableCompletion = true;
     autosuggestions = {
       enable = true;

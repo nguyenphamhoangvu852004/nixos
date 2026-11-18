@@ -19,6 +19,7 @@
     ./modules/overlays.nix
     ./modules/steam.nix
     ./modules/zsh.nix
+    ./modules/nginx.nix
     ./users/nguyenvu.nix
 
   ];

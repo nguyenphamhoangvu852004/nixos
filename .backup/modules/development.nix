@@ -14,6 +14,7 @@
     with pkgs;
     with pkgs-unstable;
     [
+      nginx
       chatgpt
       adwaita-icon-theme
       gnome-tweaks
@@ -60,7 +61,6 @@
       lua55Packages.fzf-lua
       fastfetch
       htop
-      btop
       fzf
       (pkgs.symlinkJoin {
         name = "obs-studio-with-nvidia";
