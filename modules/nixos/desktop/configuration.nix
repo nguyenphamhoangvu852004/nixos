@@ -1,4 +1,9 @@
-{ config, pkgs, ... }: {
+{ config
+, pkgs
+, pkgs-unstable
+, ...
+}:
+{
 
   # Select internationalisation properties.
   i18n.extraLocaleSettings = {
@@ -14,19 +19,37 @@
   };
 
   #ibus bamboo
+  # i18n.inputMethod = {
+  #   type = "ibus";
+  #   enable = true;
+  #   ibus.engines = with pkgs.ibus-engines; [
+  #     bamboo
+  #   ];
+  # };
+
+  #fcitx lotus
   i18n.inputMethod = {
-    type = "ibus";
     enable = true;
-    ibus.engines = with pkgs.ibus-engines; [
-      bamboo
-    ];
+    type = "fcitx5";
+    fcitx5.addons = [ pkgs-unstable.fcitx5-lotus ];
   };
+
+  systemd.packages = [ pkgs-unstable.fcitx5-lotus ];
+  systemd.services."fcitx5-lotus-server@nguyenvu" = {
+    wantedBy = [ "multi-user.target" ];
+    overrideStrategy = "asDropin";
+    serviceConfig = {
+      User = "root";
+    };
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   # Use GNOME with its Wayland session through GDM.
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.desktopManager.gnome.enable = true;
+  #  Nguyeenx Phamj H
 
   # Use KDE with its Wayland session through GDM.
   services.desktopManager.plasma6.enable = true;
