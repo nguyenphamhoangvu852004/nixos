@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 {
   users.users."nguyenvu" = {
@@ -8,10 +7,10 @@
       "networkmanager"
       "wheel"
       "docker"
+      "libvirtd"
     ];
     packages = with pkgs; [
       #  thunderbird
     ];
   };
 }
-

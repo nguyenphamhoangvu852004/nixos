@@ -12,6 +12,7 @@
       url = "github:VN-Linux-Family/zalo-for-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    yazi.url = "github:sxyazi/yazi";
   };
 
   outputs =
@@ -20,6 +21,7 @@
     , nixpkgs-unstable
     , home-manager
     , zalo-for-linux
+    , yazi
     , ...
     }@inputs:
     let
@@ -36,6 +38,13 @@
         modules = [
           home-manager.nixosModules.home-manager
           zalo-for-linux.nixosModules.default
+          ({ pkgs, ... }: {
+            environment.systemPackages = [
+              (yazi.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+                _7zz = pkgs._7zz-rar; # Support for RAR extraction
+              })
+            ];
+          })
           ./hosts/nixos/default.nix
         ];
       };

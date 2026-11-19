@@ -1,1 +1,7 @@
-{ ... }: { imports = [ ./steam.nix ./zsh.nix ]; }
+{ ... }: {
+  imports = [
+    ./steam.nix
+    ./zsh.nix
+    ./vm.nix
+  ];
+}
