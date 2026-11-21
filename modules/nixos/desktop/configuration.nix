@@ -18,15 +18,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  #ibus bamboo
-  # i18n.inputMethod = {
-  #   type = "ibus";
-  #   enable = true;
-  #   ibus.engines = with pkgs.ibus-engines; [
-  #     bamboo
-  #   ];
-  # };
-
   #fcitx lotus
   i18n.inputMethod = {
     enable = true;

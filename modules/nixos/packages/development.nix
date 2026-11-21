@@ -14,6 +14,7 @@
     with pkgs;
     with pkgs-unstable;
     [
+      kdePackages.kamoso
       chatgpt
       adwaita-icon-theme
       corefonts
@@ -35,7 +36,7 @@
       jetbrains.datagrip
       drawio
       codex
-      jdk21
+      javaPackages.compiler.openjdk21
       nodejs_24
       pnpm
       python314
