@@ -24,6 +24,10 @@
   programs.nix-ld.enable = true;
 
   programs.zalo.enable = true;
+  programs.zalo.commandLineArgs = [
+    "--ozone-platform=wayland"
+    "--enable-wayland-ime"
+  ];
 
   # Install firefox.
   programs.firefox.enable = true;
