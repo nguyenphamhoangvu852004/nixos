@@ -32,7 +32,7 @@
     adwaita-icon-theme
     corefonts
     vista-fonts
-    home-manager
+    # home-manager
     discord
     telegram-desktop
     vegeta

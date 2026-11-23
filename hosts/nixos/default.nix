@@ -36,13 +36,6 @@
 
   services.flatpak.enable = true;
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-
-    users.nguyenvu = import ../../home/home.nix;
-  };
-
   xdg.icons.enable = true;
   services.dbus.enable = true;
   # Some programs need SUID wrappers, can be configured further or are

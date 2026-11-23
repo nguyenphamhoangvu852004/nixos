@@ -4,10 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # home-manager = {
+    #   url = "github:nix-community/home-manager/release-26.05";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     zalo-for-linux = {
       url = "github:VN-Linux-Family/zalo-for-linux";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +19,7 @@
     { self
     , nixpkgs
     , nixpkgs-unstable
-    , home-manager
+    # , home-manager
     , zalo-for-linux
     , yazi
     , ...
@@ -36,7 +36,7 @@
         inherit system;
         specialArgs = { inherit inputs pkgs-unstable; };
         modules = [
-          home-manager.nixosModules.home-manager
+          # home-manager.nixosModules.home-manager
           zalo-for-linux.nixosModules.default
           ({ pkgs, ... }: {
             environment.systemPackages = [
