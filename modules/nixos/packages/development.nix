@@ -19,6 +19,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    stow
+    lazygit
     tealdeer
     tmux
     eza
