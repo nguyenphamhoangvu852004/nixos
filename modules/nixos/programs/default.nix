@@ -5,5 +5,6 @@
     ./vm.nix
     ./fzf.nix
     ./zoxide.nix
+    ./niri.nix
   ];
 }

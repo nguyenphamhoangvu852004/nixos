@@ -19,6 +19,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+ xwayland-satellite
+  noctalia
+fuzzel
     stow
     lazygit
     tealdeer
